@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JEEVIQUE</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>JEEVIQUE</h1>
+    <input type="text" id="searchInput" placeholder="Search products..." />
+    <select id="categoryFilter">
+      <option value="all">All Categories</option>
+      <option value="accessories">Accessories</option>
+      <option value="dresses">Dresses</option>
+      <option value="electronics">Electronics</option>
+      <option value="home">Home Products</option>
+      <option value="school">School Things</option>
+    </select>
+    <button onclick="showMyOrders()" style="margin-top: 10px; padding: 8px 16px;">📦 My Orders</button>
+<div id="ordersList" style="margin-top: 20px;"></div>
+
+    <div class="cart">
+      🛒 Cart: <span id="cart-count">0</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="products" id="product-list"></section>
+
+    <section class="cart-items" id="cart-items">
+      <h2>Cart Items</h2>
+      <ul id="cart-list"></ul>
+      <p><strong>Total:</strong> ₹<span id="total-price">0</span></p>
+    </section>
+  </main>
+
+<div id="productModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">×</span>
+    <h2 id="modalTitle"></h2>
+    <img id="mainImage" class="main-img" />
+    <div id="subImages"></div>
+    <p id="modalDescription"></p>
+    <p><strong>Price:</strong> ₹<span id="modalPrice"></span></p>
+    <button onclick="addModalProductToCart()">Add to Cart</button>
+  </div>
+</div>
+<div id="orderForm" style="display: none; margin-top: 20px;">
+  <h3>Enter Your Details</h3>
+  <input type="text" id="customerName" placeholder="Your Name" required><br><br>
+  <textarea id="customerAddress" placeholder="Your Address" required></textarea><br><br>
+  <button onclick="submitOrder()" style="padding: 10px 20px; background-color: purple; color: white;">Confirm Order</button>
+</div>
+<div style="margin-top: 10px;">
+  <button id="placeOrderBtn" style="padding: 10px 20px; background-color: green; color: white; border: none; cursor: pointer;">
+    Place Order
+  </button>
+</div>
+
+
+<div id="orderMessage" style="margin-top: 20px; font-weight: bold;"></div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
